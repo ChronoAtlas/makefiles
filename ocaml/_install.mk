@@ -4,7 +4,7 @@ install-all:
 		find . -type f -name 'dune' \
 			| grep -v '^test' \
 			| xargs cat \
-			| awk '/libraries/ {gsub(/\(|\)/,""); for (i=2; i<=NF; i++) printf "%s ", $i; print ""}' \
+			| awk '/libraries/ {gsub(/\(|\)/,""); for (i=2; i<=NF; i++) printf "%s ", $$i; print ""}' \
 			| tr ' ' '\n' \
 			| sort \
 			| uniq \
@@ -17,7 +17,7 @@ install:
 	opam install $$( \
 		find . -type f -name 'dune' \
 			| xargs cat \
-			| awk '/libraries/ {gsub(/\(|\)/,""); for (i=2; i<=NF; i++) printf "%s ", $i; print ""}' \
+			| awk '/libraries/ {gsub(/\(|\)/,""); for (i=2; i<=NF; i++) printf "%s ", $$i; print ""}' \
 			| tr ' ' '\n' \
 			| sort \
 			| uniq \
