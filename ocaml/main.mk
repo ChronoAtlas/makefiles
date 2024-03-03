@@ -10,3 +10,4 @@ bin/$(COMPONENT).1:
 
 include $(SELF_DIR)/_lint.mk
 include $(SELF_DIR)/_test.mk
+include $(SELF_DIR)/_dev.mk
