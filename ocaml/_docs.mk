@@ -1,3 +1,4 @@
+.PHONY: bin/$(COMPONENT).1
 bin/$(COMPONENT).1:
 	dune exec bin/main.exe -- --help=groff >$@
 
