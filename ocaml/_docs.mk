@@ -1,3 +1,3 @@
 .PHONY: docs
-docs: $(MANPAGES)
+docs:
 	dune build @doc
